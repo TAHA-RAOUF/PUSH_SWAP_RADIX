@@ -6,7 +6,7 @@
 /*   By: moraouf <moraouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 11:32:49 by moraouf           #+#    #+#             */
-/*   Updated: 2025/03/20 02:21:20 by moraouf          ###   ########.fr       */
+/*   Updated: 2025/03/20 02:54:34 by moraouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,6 @@ t_list	*ft_new_node(int content)
 	return (node);
 }
 
-void	print_list(t_list *stack_a)
-{
-	while (stack_a)
-	{
-		//Fun_position(stack_a);
-		printf("%d \n", stack_a->content);
-		stack_a = stack_a->next;
-	}
-}
 int	ft_lst_size(t_list *stack_a)
 {
 	int		count;
@@ -47,6 +38,7 @@ int	ft_lst_size(t_list *stack_a)
 	}
 	return (count);
 }
+
 void	ft_lstclear(t_list **lst)
 {
 	t_list	*current;
@@ -85,19 +77,20 @@ void	ft_lst_add_back(t_list **lst, int value)
 
 int	main(int ac, char **av)
 {
-	t_list(*stack_a);
+	int		len;
+	t_list	*stack_a;
+	t_list	*stack_b;
 
-	int len;
 	if (ac >= 2)
 	{
 		stack_a = NULL;
-		t_list *stack_b = NULL;
+		stack_b = NULL;
 		main_fun(av, ac, &stack_a);
 		if (is_sorted(stack_a))
 			return (free_stack(stack_a), 0);
 		len = ft_lst_size(stack_a);
 		if (len <= 20)
-			rank_algo(&stack_a,&stack_b);
+			rank_algo(&stack_a, &stack_b);
 		rank(stack_a);
 		radix(&stack_a, &stack_b);
 		free_stack(stack_a);

@@ -6,7 +6,7 @@
 /*   By: moraouf <moraouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 17:59:20 by moraouf           #+#    #+#             */
-/*   Updated: 2025/03/15 11:38:20 by moraouf          ###   ########.fr       */
+/*   Updated: 2025/03/20 02:40:33 by moraouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 {
 	char	*str;
 
-	int(i), j, k;
+	int (i), j, k;
 	i = 0;
 	j = 0;
 	if (!s1 || !s2)

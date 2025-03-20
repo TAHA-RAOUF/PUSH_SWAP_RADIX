@@ -6,7 +6,7 @@
 /*   By: moraouf <moraouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 22:02:34 by moraouf           #+#    #+#             */
-/*   Updated: 2025/03/20 01:59:01 by moraouf          ###   ########.fr       */
+/*   Updated: 2025/03/20 02:38:26 by moraouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	shifter(int max)
 	}
 	return (i);
 }
+
 void	push_to_b(t_list **stack_a, t_list **stack_b, int size, int shift)
 {
 	int		i;
@@ -52,10 +53,8 @@ void	radix(t_list **stack_a, t_list **stack_b)
 	size = shifter(max_pos - 1);
 	i = 0;
 	shift = 0;
-
 	while (i < size)
 	{
-        //printf("ana dekhlt");
 		push_to_b(stack_a, stack_b, max_pos, shift);
 		while (*stack_b)
 			pa(stack_a, stack_b);
@@ -63,9 +62,3 @@ void	radix(t_list **stack_a, t_list **stack_b)
 		shift++;
 	}
 }
-
-
-
-
-
-

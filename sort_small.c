@@ -6,7 +6,7 @@
 /*   By: moraouf <moraouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 15:36:51 by moraouf           #+#    #+#             */
-/*   Updated: 2025/03/19 03:53:51 by moraouf          ###   ########.fr       */
+/*   Updated: 2025/03/20 02:39:33 by moraouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,44 +27,46 @@ t_list	*max(t_list *stack_a)
 	}
 	return (max);
 }
-int is_sorted(t_list *stack_a)
+
+int	is_sorted(t_list *stack_a)
 {
-	t_list *current;
-	
+	t_list	*current;
+
 	current = stack_a;
-	while(current && current->next)
+	while (current && current->next)
 	{
-		if(current->content > current->next->content)
-			return(0);
+		if (current->content > current->next->content)
+			return (0);
 		current = current->next;
 	}
-	return(1);
+	return (1);
 }
 
-void    fun_position(t_list *stack)
+void	fun_position(t_list *stack)
 {
-    int pos;
+	int	pos;
 
 	pos = 0;
-    while(stack)
-    {
-        stack->postion = pos++;  
-		//printf("position is : %d\n ",stack->postion);  
-		stack = stack->next;  
-    }
+	while (stack)
+	{
+		stack->postion = pos++;
+		stack = stack->next;
+	}
 }
-void sorted_three_num(t_list **stack_a)
+
+void	sorted_three_num(t_list **stack_a)
 {
-	t_list *max_num;
-	
+	t_list	*max_num;
+
 	max_num = max(*stack_a);
-	if((*stack_a)->content == (max_num)->content)
+	if ((*stack_a)->content == (max_num)->content)
 		ra(stack_a);
-	else if((*stack_a)->next->content == (max_num)->content)
+	else if ((*stack_a)->next->content == (max_num)->content)
 		rra(stack_a);
-	if((*stack_a)->content > (*stack_a)->next->content)
+	if ((*stack_a)->content > (*stack_a)->next->content)
 		sa(stack_a);
 }
+
 t_list	*min(t_list *stack_a)
 {
 	t_list	*current;

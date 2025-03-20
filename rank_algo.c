@@ -6,7 +6,7 @@
 /*   By: moraouf <moraouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 17:37:24 by moraouf           #+#    #+#             */
-/*   Updated: 2025/03/20 02:17:22 by moraouf          ###   ########.fr       */
+/*   Updated: 2025/03/20 02:38:52 by moraouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,36 +30,35 @@ int	rank(t_list *stack_a)
 			runner = runner->next;
 		}
 		current->rank = runk;
-		//printf("runk  :: %d \n", current->rank);
 		current = current->next;
 	}
 	return (runk);
 }
 
-void rank_algo(t_list **stack_a,t_list **stack_b)
+void	rank_algo(t_list **stack_a, t_list **stack_b)
 {
-    int len = ft_lst_size(*stack_a);
-	t_list *min_node;
+	int		len;
+	t_list	*min_node;
 
+	len = ft_lst_size(*stack_a);
 	fun_position(*stack_a);
-    while(len > 3)
+	while (len > 3)
 	{
-		min_node = min(*stack_a); 
-		while(min_node->content != (*stack_a)->content)
+		min_node = min(*stack_a);
+		while (min_node->content != (*stack_a)->content)
 		{
-			if(min_node->postion <=  len/2)
+			if (min_node->postion <= len / 2)
 				ra(stack_a);
 			else
 				rra(stack_a);
 		}
-		pb(stack_a,stack_b);
+		pb(stack_a, stack_b);
 		fun_position(*stack_a);
 		len--;
 	}
 	sorted_three_num(stack_a);
-	while(*stack_b)
+	while (*stack_b)
 	{
-		pa(stack_a,stack_b);
+		pa(stack_a, stack_b);
 	}
 }
-

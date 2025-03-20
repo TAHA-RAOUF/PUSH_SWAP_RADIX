@@ -6,7 +6,7 @@
 /*   By: moraouf <moraouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 14:09:09 by moraouf           #+#    #+#             */
-/*   Updated: 2025/03/17 13:31:59 by moraouf          ###   ########.fr       */
+/*   Updated: 2025/03/20 02:37:50 by moraouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,9 @@ void	pb(t_list **stack_a, t_list **stack_b)
 
 void	sa(t_list **stack_a)
 {
-	t_list *first, *second;
+	t_list	*first;
+	t_list	*second;
+
 	if (!*stack_a || !(*stack_a)->next)
 		return ;
 	first = *stack_a;
@@ -65,6 +67,7 @@ void	sb(t_list **stack_b)
 	*stack_b = second;
 	write(1, "sb\n", 3);
 }
+
 void	ss(t_list **stack_a, t_list **stack_b)
 {
 	sb(stack_b);
