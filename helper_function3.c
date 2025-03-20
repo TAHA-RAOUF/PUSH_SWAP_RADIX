@@ -6,7 +6,7 @@
 /*   By: moraouf <moraouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 15:44:29 by moraouf           #+#    #+#             */
-/*   Updated: 2025/03/20 02:53:49 by moraouf          ###   ########.fr       */
+/*   Updated: 2025/03/20 18:31:23 by moraouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	check_double(t_list *head)
 		{
 			if (current->content == runner->content)
 			{
-				write(1, "eroor1\n", 7);
+				write(2, "Error\n", 6);
 				ft_lstclear(&head);
 				return (1);
 			}
@@ -67,4 +67,9 @@ void	print_list(t_list *stack_a)
 		printf("%d \n", stack_a->content);
 		stack_a = stack_a->next;
 	}
+}
+
+int	ft_isdigit(int c)
+{
+	return (c >= '0' && c <= '9');
 }

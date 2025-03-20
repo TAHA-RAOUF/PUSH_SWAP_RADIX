@@ -6,7 +6,7 @@
 /*   By: moraouf <moraouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 11:32:49 by moraouf           #+#    #+#             */
-/*   Updated: 2025/03/20 02:54:34 by moraouf          ###   ########.fr       */
+/*   Updated: 2025/03/20 16:52:26 by moraouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,13 +91,8 @@ int	main(int ac, char **av)
 		len = ft_lst_size(stack_a);
 		if (len <= 20)
 			rank_algo(&stack_a, &stack_b);
-		rank(stack_a);
-		radix(&stack_a, &stack_b);
+		else
+			radix(&stack_a, &stack_b);
 		free_stack(stack_a);
-	}
-	else
-	{
-		write(1, "error2\n", 6);
-		exit(1);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: moraouf <moraouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 22:02:34 by moraouf           #+#    #+#             */
-/*   Updated: 2025/03/20 02:38:26 by moraouf          ###   ########.fr       */
+/*   Updated: 2025/03/20 15:21:27 by moraouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void	radix(t_list **stack_a, t_list **stack_b)
 	int	i;
 	int	shift;
 
+	rank(*stack_a);
 	max_pos = ft_lst_size(*stack_a);
 	size = shifter(max_pos - 1);
 	i = 0;
