@@ -6,7 +6,7 @@
 /*   By: moraouf <moraouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 14:09:12 by moraouf           #+#    #+#             */
-/*   Updated: 2025/03/20 18:35:20 by moraouf          ###   ########.fr       */
+/*   Updated: 2025/03/21 13:53:55 by moraouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,8 +91,7 @@ void	main_fun(char **str, int ac, t_list **head)
 	int		j;
 
 	check_empty(str, ac);
-	j = 2;
-	joined = ft_strjoin("", str[1]);
+	(1) && (joined = ft_strjoin("", str[1]), j = 2, i = 0);
 	while (ac > j)
 	{
 		temp = joined;
@@ -101,10 +100,12 @@ void	main_fun(char **str, int ac, t_list **head)
 	}
 	numbers = ft_split(joined, 32);
 	free(joined);
-	i = 0;
 	while (numbers[i])
 		ft_lst_add_back(head, ft_atoi(numbers[i++], numbers, head));
 	if (check_double(*head))
-		return (free_mem(numbers), exit(1), (void)0);
+	{
+		free_mem(numbers);
+		exit(1);
+	}
 	free_mem(numbers);
 }
